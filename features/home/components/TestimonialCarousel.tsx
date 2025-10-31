@@ -17,30 +17,21 @@ const testimonials = [
   },
   {
     id: 1,
-    name: "Tesfaye Lemi",
-    role: "Frontend Web Lead",
+    name: "Bersufekad Adane",
+    role: "Mobile App Lead",
     company: "Eaglelion systems Technology",
     content:
-      "Bekalu delivered an exceptional web application that exceeded our expectations. His attention to detail and technical expertise made our project a huge success.",
+      "kidus delivered an exceptional mobile application development that exceeded our expectations. His attention to detail and technical expertise made our project a huge success.",
     rating: 5,
   },
 
   {
-    id: 3,
-    name: "Natnael Feleke",
-    role: "Senior Developer",
-    company: "Ashewa Technology",
-    content:
-      "Bekalu's expertise in Next.js helped us build a complex data visualization platform. His code quality and communication were outstanding.",
-    rating: 5,
-  },
-  {
     id: 4,
-    name: "Zerihun Tegenu",
-    role: "Frontend Developer",
+    name: "Yohanes Degu",
+    role: "Mobile App Developer",
     company: "Eaglelion Systems Technology",
     content:
-      "Working with Bekalu was an absolute pleasure. His attention to detail, clean code structure, and deep understanding of frontend best practices made collaboration seamless. He consistently delivered high-quality results and went the extra mile to ensure the project’s success.",
+      "Working with kidus was an absolute pleasure. His attention to detail, clean code structure, and deep understanding of frontend best practices made collaboration seamless. He consistently delivered high-quality results and went the extra mile to ensure the project’s success.",
     rating: 5,
   },
 ];
