@@ -261,7 +261,7 @@ const ContactSection = () => {
 
                 {/* GitHub */}
                 <Link
-                  href="https://github.com/bekalu73"
+                  href="kidusyared455@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 sm:gap-4"
@@ -269,14 +269,14 @@ const ContactSection = () => {
                   <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Github className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600" />
                   </div>
-                  <div className="min-w-0">
+                  {/* <div className="min-w-0">
                     <Text className="font-medium text-gray-900 text-sm sm:text-base">
                       GitHub
                     </Text>
                     <Text className="text-gray-600 text-xs sm:text-sm">
                       github.com/bekalu73
                     </Text>
-                  </div>
+                  </div> */}
                 </Link>
               </div>
             </div>
