@@ -31,14 +31,12 @@ const Hero = () => {
                 as="p"
                 className="text-gray-600 leading-relaxed text-sm md:text-base max-w-2xl"
               >
-                Results-driven Fullstack Developer with 2 years of professional
-                experience specializing in high-performance React Native mobile
-                applications and scalable GoLang backends. Proven ability to
-                deliver robust, quantifiable solutions for major financial and
-                enterprise projects, ensuring system stability and high-quality
-                user experience. Seeking to leverage expertise in the full
-                application lifecycle within a challenging, remote-friendly tech
-                startup environment.
+                Results-driven React Native Developer with 2+ years of professional
+                experience building high-performance mobile applications and scalable web
+                solutions. Strong expertise in React Native, React, Next.js, and Node.js,
+                with hands-on experience delivering reliable, user-centric products for
+                fintech and enterprise systems. Passionate about contributing to
+                fast-growing, remote-friendly tech teams and shipping impactful products.
               </Text>
               <div className="flex  items-center justify-center lg:justify-start gap-3 md:gap-4">
                 <Link href={"/#contact"}>

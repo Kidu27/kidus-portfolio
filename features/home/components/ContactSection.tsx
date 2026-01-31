@@ -48,7 +48,7 @@ const ContactSection = () => {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
-          to_email: "bekalusisay2010@gmail.com",
+          to_email: "kidusyared455@gmail.com",
           date: date,
           time: time,
         }
@@ -100,7 +100,7 @@ const ContactSection = () => {
               <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
                 <Text className="text-red-800 text-sm">
                   Sorry, there was an error sending your message. Please try
-                  again or email me directly at bekalusisay2010@gmail.com
+                  again or email me directly at kidusyared455@gmail.com
                 </Text>
               </div>
             )}
@@ -221,7 +221,7 @@ const ContactSection = () => {
               <div className="flex flex-col gap-4">
                 {/* Email */}
                 <Link
-                  href="mailto:bekalusisay2010@gmail.com"
+                  href="mailto:kidusyared455@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 sm:gap-4"
@@ -234,14 +234,14 @@ const ContactSection = () => {
                       Email
                     </Text>
                     <Text className="text-gray-600 text-xs sm:text-sm">
-                      bekalusisay2010@gmail.com
+                      kidusyared455@gmail.com
                     </Text>
                   </div>
                 </Link>
 
                 {/* LinkedIn */}
                 <Link
-                  href="https://linkedin.com/in/bekalusisay"
+                  href="https://linkedin.com/in/kidus-yared-a36562355/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 sm:gap-4"
@@ -254,7 +254,7 @@ const ContactSection = () => {
                       LinkedIn
                     </Text>
                     <Text className="text-gray-600 text-xs sm:text-sm">
-                      linkedin.com/in/bekalusisay
+                      linkedin.com/in/kidus-yared-a36562355/
                     </Text>
                   </div>
                 </Link>

@@ -24,9 +24,10 @@ export default function About() {
               <span className="font-semibold text-gray-900">
                 Mobile App Developer{" "}
               </span>
-              who transforms complex ideas into modern, high-performing web
-              apps. I love building fast backends, smooth interfaces, and clean,
-              maintainable code that delivers real user value.
+              who transforms complex ideas into modern, high-performing mobile
+              applications and scalable web solutions. I specialize in React Native,
+              React, and Node.js, delivering reliable, user-centric products for
+              fintech and enterprise systems.
             </Text>
 
             {/* Skills Grid */}
@@ -35,11 +36,15 @@ export default function About() {
                 "React Native",
                 "React.js",
                 "TypeScript",
+                "JavaScript",
+                "Next.js",
                 "Node.js",
                 "Express",
-                "Postgres",
+                "Flutter",
                 "MongoDB",
-                "Tailwind CSS",
+                "PostgreSQL",
+                "MySQL",
+                "RESTful APIs",
               ].map((skill) => (
                 <Button
                   key={skill}
@@ -77,15 +82,15 @@ export default function About() {
             <ul className="space-y-3 text-gray-700">
               <li className="flex items-center gap-3">
                 <Star className="text-gray-600" size={18} />
-                <span>Developed 15+ production-ready web projects</span>
+                <span>Developed 4+ production-ready mobile applications</span>
               </li>
               <li className="flex items-center gap-3">
                 <Users2 className="text-gray-600" size={18} />
-                <span>Collaborated with 10+ engineering teams</span>
+                <span>Collaborated with cross-functional teams on fintech projects</span>
               </li>
               <li className="flex items-center gap-3">
                 <Award className="text-gray-600" size={18} />
-                <span>Recognized for clean code & UI craftsmanship</span>
+                <span>Specialized in React Native & enterprise solutions</span>
               </li>
             </ul>
           </div>

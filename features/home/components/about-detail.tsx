@@ -29,26 +29,28 @@ const AboutDetail: React.FC = () => {
   const experiences: WorkItem[] = [
     {
       type: "work",
-      title: "Frontend Developer",
+      title: "Mobile App Developer",
       period: "March 2025 – Present",
       company: "EagleLion System Technology",
       location: "Addis Ababa, Ethiopia",
       achievements: [
-        "Developed dynamic and responsive frontend interfaces using Next.js and React for enterprise web applications",
-        "Collaborated with cross-functional teams to implement scalable UI/UX designs, improving user engagement by 20%",
-        "Optimized frontend performance, reducing load times by 15% through efficient state management and code refactoring",
+        "Developed and maintained cross-platform mobile applications using React Native for fintech and enterprise solutions",
+        "Implemented responsive UI components and smooth navigation optimized for both Android and iOS devices",
+        "Integrated RESTful APIs and handled secure data flows in collaboration with backend teams",
+        "Improved application performance through optimized state management and component lifecycle handling",
       ],
     },
     {
       type: "work",
-      title: "Full-stack Developer",
-      period: "October 2024 – March 2025",
-      company: "Ashewa Technology Solution",
+      title: "Mobile App Developer",
+      period: "July 2023 – Feb 2024",
+      company: "Olla App Development",
       location: "Addis Ababa, Ethiopia",
       achievements: [
-        "Built and maintained full-stack web applications using MERN stack, ensuring high availability and security",
-        "Designed and implemented RESTful APIs with Node.js and Express, integrating MongoDB and PostgreSQL",
-        "Streamlined deployment processes using CI/CD pipelines, reducing deployment time by 25%",
+        "Built and maintained a production-grade mobile application using React Native",
+        "Implemented location-based features and dynamic UI updates for real-time user interaction",
+        "Worked closely with designers and backend developers to translate requirements into functional mobile features",
+        "Participated in code reviews and agile development cycles to ensure quality and timely delivery",
       ],
     },
   ];
@@ -56,10 +58,10 @@ const AboutDetail: React.FC = () => {
   const education: EducationItem[] = [
     {
       type: "education",
-      title: "Bachelor of Science, Electrical and Computer Engineering",
-      period: "Sept 2011 – July 2023",
-      institution: "Addis Ababa Science and Technology University",
-      achievement: "Awarded Very Good Achiever",
+      title: "Bachelor of Science in Computer Science",
+      period: "September 2011 – July 2023",
+      institution: "Unity University",
+      achievement: "Graduated with distinction",
       skills: [],
     },
   ];
@@ -74,17 +76,10 @@ const AboutDetail: React.FC = () => {
     },
     {
       type: "certification",
-      title: "MERN Fullstack Website Development",
-      period: "Feb 2023 – July 2023",
-      institution: "Evangadi Tech",
-      skills: ["MERN Stack", "Full-stack Development", "RESTful APIs"],
-    },
-    {
-      type: "certification",
       title: "Full Stack Website Development",
       period: "2023",
-      institution: "Evangadi Tech",
-      skills: ["Web Development", "Frontend & Backend", "Database Design"],
+      institution: "Udemy ",
+      skills: ["Full-stack Development", "Web Development", "Database Design"],
     },
   ];
 

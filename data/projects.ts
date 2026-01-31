@@ -11,85 +11,59 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "dashen-superapp-boch-boch-portal",
-    title: "Dashen SuperAPP Boch Boch Portal",
-    subtitle: "Web • Bank game portal",
+    slug: "olla-app",
+    title: "Olla App",
+    subtitle: "Mobile • Location-based restaurant discovery",
+    img: "/projects/olla.png",
+    tags: ["React Native", "Geolocation", "TypeScript"],
+    description:
+      "Location-based restaurant discovery marketplace mobile application.",
+    details: [
+      "Developed a cross-platform mobile app using React Native for discovering nearby restaurants within a defined radius.",
+      "Implemented geolocation-based search and distance filtering to enhance user experience.",
+      "Designed smooth and responsive mobile UI optimized for real-world usage.",
+    ],
+  },
+  {
+    slug: "etswitch-portal",
+    title: "EtSwitch Agency Banking Portal",
+    subtitle: "Web • Fintech portal for agency banking",
+    img: "/projects/etswitch.png",
+    tags: ["React", "RESTful APIs", "Fintech"],
+    description:
+      "Web-based fintech portal for managing agency banking operations and services.",
+    details: [
+      "Built and enhanced React web portal features for agent management, transactions, and operational workflows.",
+      "Integrated backend APIs to display real-time financial data, reports, and service statuses within the portal.",
+      "Improved portal usability, responsiveness, and stability across different browsers and screen resolutions.",
+    ],
+  },
+  {
+    slug: "cbe-superapp",
+    title: "CBE SuperApp",
+    subtitle: "Mobile • Enterprise banking application",
+    img: "/projects/cbe.png",
+    tags: ["React Native", "Financial Services", "Enterprise"],
+    description:
+      "Enterprise-scale mobile banking and financial services application.",
+    details: [
+      "Developed React Native components for financial service modules.",
+      "Integrated API-driven features for categorized content and services.",
+      "Enhanced performance and responsiveness for high-traffic usage.",
+    ],
+  },
+  {
+    slug: "dashen-superapp",
+    title: "Dashen Super App",
+    subtitle: "Mobile • Digital savings platform",
     img: "/projects/dashen.png",
-    tags: ["Next.js", "Turbo Repo", "TypeScript"],
+    tags: ["React Native", "Financial Services", "Cross-platform"],
     description:
-      "Portal for Dashen Bank game, featuring a comprehensive dashboard.",
+      "Community-based digital savings and financial services mobile platform.",
     details: [
-      "Built using Next.js, Turbo Repo, and TypeScript.",
-      "Developed features to display prizes, players' activity stats, and more.",
-    ],
-    // links: {
-    //   live: "https://example.com",
-    //   github: "https://github.com/example/creative-portfolio",
-    // },
-  },
-  {
-    slug: "hageregna-equb",
-    title: "Hageregna Equb",
-    subtitle: "Fullstack • Community-based rotating savings platform",
-    img: "/projects/hageregna.png",
-    tags: ["Prisma", "PostgreSQL", "React.js", "Node.js"],
-    description:
-      "Community-based rotating savings group platform for secure and efficient transactions.",
-    details: [
-      "Developed using Prisma, PostgreSQL, React.js, and Node.js for secure and efficient transactions.",
-      "Integrated cycle-based payout system, improving trust and usability.",
-    ],
-  },
-  {
-    slug: "abronet-equb",
-    title: "Abronet Equb",
-    subtitle: "Backend • Pyramid-style savings group platform",
-    img: "/projects/abronet.png",
-    tags: ["MongoDB", "React.js", "Node.js"],
-    description:
-      "Pyramid-style savings group platform for rapid capital collection and distribution.",
-    details: [
-      "Developed a scalable web application using MongoDB, React.js, and Node.js.",
-      "Implemented tier-based contribution system, enhancing user participation.",
-    ],
-  },
-  {
-    slug: "delalaye-app",
-    title: "Delalaye App",
-    subtitle: "Backend • Local services platform",
-    img: "/projects/delalaye.png",
-    tags: ["MongoDB", "React.js", "Node.js"],
-    description:
-      "Digital platform connecting service providers with customers for local services.",
-    details: [
-      "Maintained and updated the app using MongoDB, Node.js, and React.js, ensuring reliable performance.",
-      "Improved user interface for better accessibility and engagement.",
-    ],
-  },
-  {
-    slug: "directory-listing",
-    title: "Directory Listing",
-    subtitle: "Web • Categorized information platform",
-    img: "/projects/directory.png",
-    tags: ["Node.js", "React.js", "MongoDB"],
-    description:
-      "Platform for categorized information display, enabling efficient search and connection.",
-    details: [
-      "Built a responsive application with Node.js, MongoDB, and React.js.",
-      "Optimized search functionality, reducing query response time by 30%.",
-    ],
-  },
-  {
-    slug: "kality-habitat-edir",
-    title: "Kality Habitat Edir",
-    subtitle: "Fullstack • Mutual support association platform",
-    img: "/projects/kality.png",
-    tags: ["Next.js", "React.js"],
-    description:
-      "Mutual support association platform for financial and emotional aid.",
-    details: [
-      "Created a user-friendly interface using Next.js.",
-      "Streamlined contribution tracking, enhancing community engagement.",
+      "Developed and maintained cross-platform mobile features using React Native for Android and iOS.",
+      "Implemented secure contribution and payout flows with real-time status updates.",
+      "Optimized mobile performance and ensured smooth user interactions across devices.",
     ],
   },
 ];
