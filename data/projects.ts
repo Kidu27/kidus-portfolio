@@ -11,20 +11,6 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "dashen-superapp",
-    title: "Dashen Super App",
-    subtitle: "Mobile • Digital savings platform",
-    img: "/projects/dashen.png",
-    tags: ["React Native", "Financial Services", "Cross-platform"],
-    description:
-      "Community-based digital savings and financial services mobile platform.",
-    details: [
-      "Developed and maintained cross-platform mobile features using React Native for Android and iOS.",
-      "Implemented secure contribution and payout flows with real-time status updates.",
-      "Optimized mobile performance and ensured smooth user interactions across devices.",
-    ],
-  },
-  {
     slug: "cbe-superapp",
     title: "CBE SuperApp",
     subtitle: "Mobile • Enterprise banking application",
@@ -38,6 +24,21 @@ export const projects: Project[] = [
       "Enhanced performance and responsiveness for high-traffic usage.",
     ],
   },
+  {
+    slug: "dashen-superapp",
+    title: "Dashen Super App",
+    subtitle: "Mobile • Digital savings platform",
+    img: "/projects/dashen.png",
+    tags: ["React Native", "Financial Services", "Cross-platform"],
+    description:
+      "Community-based digital savings and financial services mobile platform.",
+    details: [
+      "Developed and maintained cross-platform mobile features using React Native for Android and iOS.",
+      "Implemented secure contribution and payout flows with real-time status updates.",
+      "Optimized mobile performance and ensured smooth user interactions across devices.",
+    ],
+  },
+
   {
     slug: "etswitch-portal",
     title: "EtSwitch Agency Banking Portal",
