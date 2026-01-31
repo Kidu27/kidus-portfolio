@@ -27,8 +27,8 @@ const testimonials = [
   {
     id: 1,
     name: "Bekalu Sisay",
-    role: "Fullstack Developer",
-    company: "Tech Solutions",
+    role: "Mobile App Developer",
+    company: "Eaglelion systems Technology",
     content:
       "Kidus is an exceptional mobile app developer with outstanding React Native skills. His attention to detail and ability to deliver high-quality, scalable solutions is impressive. Working with him has been a great experience.",
     rating: 5,
