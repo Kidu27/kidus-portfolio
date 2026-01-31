@@ -22,7 +22,7 @@ const ContactSection = () => {
   >("idle");
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -51,7 +51,7 @@ const ContactSection = () => {
           to_email: "kidusyared455@gmail.com",
           date: date,
           time: time,
-        }
+        },
       );
 
       if (result.status === 200) {
@@ -261,7 +261,7 @@ const ContactSection = () => {
 
                 {/* GitHub */}
                 <Link
-                  href="kidusyared455@gmail.com"
+                  href="https://github.com/Kidu27"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 sm:gap-4"
