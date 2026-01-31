@@ -11,31 +11,17 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "olla-app",
-    title: "Olla App",
-    subtitle: "Mobile • Location-based restaurant discovery",
-    img: "/projects/olla.png",
-    tags: ["React Native", "Geolocation", "TypeScript"],
+    slug: "dashen-superapp",
+    title: "Dashen Super App",
+    subtitle: "Mobile • Digital savings platform",
+    img: "/projects/dashen.png",
+    tags: ["React Native", "Financial Services", "Cross-platform"],
     description:
-      "Location-based restaurant discovery marketplace mobile application.",
+      "Community-based digital savings and financial services mobile platform.",
     details: [
-      "Developed a cross-platform mobile app using React Native for discovering nearby restaurants within a defined radius.",
-      "Implemented geolocation-based search and distance filtering to enhance user experience.",
-      "Designed smooth and responsive mobile UI optimized for real-world usage.",
-    ],
-  },
-  {
-    slug: "etswitch-portal",
-    title: "EtSwitch Agency Banking Portal",
-    subtitle: "Web • Fintech portal for agency banking",
-    img: "/projects/etswitch.png",
-    tags: ["React", "RESTful APIs", "Fintech"],
-    description:
-      "Web-based fintech portal for managing agency banking operations and services.",
-    details: [
-      "Built and enhanced React web portal features for agent management, transactions, and operational workflows.",
-      "Integrated backend APIs to display real-time financial data, reports, and service statuses within the portal.",
-      "Improved portal usability, responsiveness, and stability across different browsers and screen resolutions.",
+      "Developed and maintained cross-platform mobile features using React Native for Android and iOS.",
+      "Implemented secure contribution and payout flows with real-time status updates.",
+      "Optimized mobile performance and ensured smooth user interactions across devices.",
     ],
   },
   {
@@ -53,17 +39,31 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "dashen-superapp",
-    title: "Dashen Super App",
-    subtitle: "Mobile • Digital savings platform",
-    img: "/projects/dashen.png",
-    tags: ["React Native", "Financial Services", "Cross-platform"],
+    slug: "etswitch-portal",
+    title: "EtSwitch Agency Banking Portal",
+    subtitle: "Web • Fintech portal for agency banking",
+    img: "/projects/etswitch.png",
+    tags: ["React", "RESTful APIs", "Fintech"],
     description:
-      "Community-based digital savings and financial services mobile platform.",
+      "Web-based fintech portal for managing agency banking operations and services.",
     details: [
-      "Developed and maintained cross-platform mobile features using React Native for Android and iOS.",
-      "Implemented secure contribution and payout flows with real-time status updates.",
-      "Optimized mobile performance and ensured smooth user interactions across devices.",
+      "Built and enhanced React web portal features for agent management, transactions, and operational workflows.",
+      "Integrated backend APIs to display real-time financial data, reports, and service statuses within the portal.",
+      "Improved portal usability, responsiveness, and stability across different browsers and screen resolutions.",
+    ],
+  },
+  {
+    slug: "olla-app",
+    title: "Olla App",
+    subtitle: "Mobile • Location-based restaurant discovery",
+    img: "/projects/olla.png",
+    tags: ["React Native", "Geolocation", "TypeScript"],
+    description:
+      "Location-based restaurant discovery marketplace mobile application.",
+    details: [
+      "Developed a cross-platform mobile app using React Native for discovering nearby restaurants within a defined radius.",
+      "Implemented geolocation-based search and distance filtering to enhance user experience.",
+      "Designed smooth and responsive mobile UI optimized for real-world usage.",
     ],
   },
 ];

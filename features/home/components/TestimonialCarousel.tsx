@@ -12,26 +12,34 @@ const testimonials = [
     role: "Startup Founder",
     company: "Olla ",
     content:
-      "Working with Bekalu was a game-changer for our startup. He built a robust MERN stack application that scaled perfectly with our growth.",
+      "Working with Kidus was a game-changer for our startup. He built a robust mobile application that scaled perfectly with our growth.",
     rating: 5,
   },
   {
-    id: 1,
+    id: 3,
     name: "Bersufekad Adane",
     role: "Mobile App Lead",
     company: "Eaglelion systems Technology",
     content:
-      "kidus delivered an exceptional mobile application development that exceeded our expectations. His attention to detail and technical expertise made our project a huge success.",
+      "Kidus delivered an exceptional mobile application development that exceeded our expectations. His attention to detail and technical expertise made our project a huge success.",
     rating: 5,
   },
-
+  {
+    id: 1,
+    name: "Bekalu Sisay",
+    role: "Fullstack Developer",
+    company: "Tech Solutions",
+    content:
+      "Kidus is an exceptional mobile app developer with outstanding React Native skills. His attention to detail and ability to deliver high-quality, scalable solutions is impressive. Working with him has been a great experience.",
+    rating: 5,
+  },
   {
     id: 4,
     name: "Yohanes Degu",
     role: "Mobile App Developer",
     company: "Eaglelion Systems Technology",
     content:
-      "Working with kidus was an absolute pleasure. His attention to detail, clean code structure, and deep understanding of frontend best practices made collaboration seamless. He consistently delivered high-quality results and went the extra mile to ensure the project’s success.",
+      "Working with Kidus was an absolute pleasure. His attention to detail, clean code structure, and deep understanding of frontend best practices made collaboration seamless. He consistently delivered high-quality results and went the extra mile to ensure the project's success.",
     rating: 5,
   },
 ];
@@ -51,7 +59,7 @@ const TestimonialCarousel = () => {
 
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
-        prevIndex === totalSlides - 1 ? 0 : prevIndex + 1
+        prevIndex === totalSlides - 1 ? 0 : prevIndex + 1,
       );
     }, 5000);
 

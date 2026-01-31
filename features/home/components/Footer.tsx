@@ -25,21 +25,21 @@ const Footer = () => {
     social: [
       {
         name: "GitHub",
-        href: "https://github.com/bekalu73",
+        href: "https://github.com/Kidu27",
         icon: Github,
-        username: "@bekalu73",
+        username: "@Kidu27",
       },
       {
         name: "LinkedIn",
-        href: "https://linkedin.com/in/bekalusisay",
+        href: "https://www.linkedin.com/in/kidus-yared-a36562355/",
         icon: Linkedin,
-        username: "bekalusisay",
+        username: "kidus-yared-a36562355/",
       },
       {
         name: "Email",
         href: "mailto:bekalusisay2010@gmail.com",
         icon: Mail,
-        username: "bekalusisay2010@gmail.com",
+        username: "kidusyared455@gmail.com",
       },
     ],
   };
@@ -57,7 +57,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="mb-4">
               <Text className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                {"<Bekalu />"}
+                {"<Kidus />"}
               </Text>
               <div className="w-12 h-1 bg-gradient-to-r from-primary to-primary/60 rounded-full mt-2"></div>
             </div>
@@ -156,7 +156,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col lg:flex-row justify-between items-center gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-2 text-gray-400 text-sm">
-            <Text>© {currentYear} Bekalu Sisay. All rights reserved.</Text>
+            <Text>© {currentYear} Kidus Yared. All rights reserved.</Text>
             <div className="hidden sm:block w-1 h-1 bg-gray-600 rounded-full"></div>
             <Text>Built with Next.js & Tailwind CSS</Text>
           </div>
