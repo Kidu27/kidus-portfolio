@@ -269,28 +269,9 @@ const ContactSection = () => {
                   <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Github className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600" />
                   </div>
-                  {/* <div className="min-w-0">
-                    <Text className="font-medium text-gray-900 text-sm sm:text-base">
-                      GitHub
-                    </Text>
-                    <Text className="text-gray-600 text-xs sm:text-sm">
-                      github.com/bekalu73
-                    </Text>
-                  </div> */}
                 </Link>
               </div>
             </div>
-
-            {/* Map Placeholder */}
-            {/* <div className="text-center">
-                <MapPin className="w-6 h-6 sm:w-8 sm:h-8 text-gray-400 mx-auto mb-2" />
-                <Text className="text-gray-500 text-xs sm:text-sm">
-                  Interactive Map
-                </Text>
-                <Text className="text-gray-400 text-xs">
-                  Addis Ababa, Ethiopia
-                </Text>
-              </div> */}
             <div className="w-full h-[450px] rounded-xl overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.4737482122146!2d38.79753734032941!3d9.020474466117989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b855cd643a691%3A0x5ce3922436b4f99a!2sMegenagna!5e0!3m2!1sen!2set!4v1761471406293!5m2!1sen!2set"

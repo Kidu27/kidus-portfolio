@@ -21,7 +21,7 @@ const Hero = () => {
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full w-fit mx-auto lg:mx-0">
                 <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
                 <Text className="text-sm md:text-base text-primary font-medium">
-                  Creative Mobile APP Developer
+                  Full-Stack Software Engineer | Mobile & Backend Systems
                 </Text>
               </div>
               <Text className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
@@ -31,12 +31,9 @@ const Hero = () => {
                 as="p"
                 className="text-gray-600 leading-relaxed text-sm md:text-base max-w-2xl"
               >
-                Results-driven React Native Developer with 2+ years of professional
-                experience building high-performance mobile applications and scalable web
-                solutions. Strong expertise in React Native, React, Next.js, and Node.js,
-                with hands-on experience delivering reliable, user-centric products for
-                fintech and enterprise systems. Passionate about contributing to
-                fast-growing, remote-friendly tech teams and shipping impactful products.
+                Building high-performance mobile experiences and scalable
+                backend architectures. Expert in React Native, Phyton and
+                Node.js with a focus on fintech security and reliability
               </Text>
               <div className="flex  items-center justify-center lg:justify-start gap-3 md:gap-4">
                 <Link href={"/#contact"}>

@@ -22,38 +22,64 @@ export default function About() {
             <Text className="text-gray-600 leading-relaxed mb-5">
               I’m a{" "}
               <span className="font-semibold text-gray-900">
-                Mobile App Developer{" "}
+                Software Engineer{" "}
               </span>
-              who transforms complex ideas into modern, high-performing mobile
-              applications and scalable web solutions. I specialize in React Native,
-              React, and Node.js, delivering reliable, user-centric products for
-              fintech and enterprise systems.
+              who bridges the gap between complex backend logic and seamless
+              mobile interfaces. With 2+ years of experience in the Fintech
+              sector, I specialize in building secure, scalable Node.js/Python
+              backends and high-performance React Native applications. I focus
+              on writing clean, maintainable code that powers reliable
+              enterprise solutions
             </Text>
 
             {/* Skills Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-3 mb-6">
-              {[
-                "React Native",
-                "React.js",
-                "TypeScript",
-                "JavaScript",
-                "Next.js",
-                "Node.js",
-                "Express",
-                "Flutter",
-                "MongoDB",
-                "PostgreSQL",
-                "MySQL",
-                "RESTful APIs",
-              ].map((skill) => (
-                <Button
-                  key={skill}
-                  variant="outline"
-                  className="rounded-full text-gray-700 border-gray-300 bg-gray-100"
-                >
-                  {skill}
-                </Button>
-              ))}
+            {/* Grouped Skills */}
+            <div className="space-y-4 mb-6">
+              <div>
+                <Text className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
+                  Backend & Data
+                </Text>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "Node.js",
+                    "Express",
+                    "Python",
+                    "PostgreSQL",
+                    "MySQL",
+                    "MongoDB",
+                    "RESTful APIs",
+                  ].map((s) => (
+                    <span
+                      key={s}
+                      className="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full border border-blue-100"
+                    >
+                      {s}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <Text className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
+                  Mobile & Frontend
+                </Text>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "React Native",
+                    "React.js",
+                    "TypeScript",
+                    "Next.js",
+                    "Flutter",
+                    "Tailwind CSS",
+                  ].map((s) => (
+                    <span
+                      key={s}
+                      className="px-3 py-1 bg-green-50 text-green-700 text-xs font-medium rounded-full border border-green-100"
+                    >
+                      {s}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* See More */}
@@ -86,7 +112,9 @@ export default function About() {
               </li>
               <li className="flex items-center gap-3">
                 <Users2 className="text-gray-600" size={18} />
-                <span>Collaborated with cross-functional teams on fintech projects</span>
+                <span>
+                  Collaborated with cross-functional teams on fintech projects
+                </span>
               </li>
               <li className="flex items-center gap-3">
                 <Award className="text-gray-600" size={18} />

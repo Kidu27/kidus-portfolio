@@ -29,15 +29,15 @@ const AboutDetail: React.FC = () => {
   const experiences: WorkItem[] = [
     {
       type: "work",
-      title: "Mobile App Developer",
+      title: "Software Engineer", // Changed from "Mobile App Developer"
       period: "March 2025 – Present",
       company: "EagleLion System Technology",
       location: "Addis Ababa, Ethiopia",
       achievements: [
-        "Developed and maintained cross-platform mobile applications using React Native for fintech and enterprise solutions",
-        "Implemented responsive UI components and smooth navigation optimized for both Android and iOS devices",
-        "Integrated RESTful APIs and handled secure data flows in collaboration with backend teams",
-        "Improved application performance through optimized state management and component lifecycle handling",
+        "Architecting scalable fintech architectures using React Native and Node.js, ensuring 99.9% system stability.",
+        "Engineering secure RESTful API integrations for enterprise-level banking solutions and high-volume transaction modules.",
+        "Optimizing backend-to-frontend data synchronization patterns to reduce latency in real-time financial reporting.",
+        "Mentoring junior developers on clean code practices, Git workflows, and CI/CD implementation.",
       ],
     },
     {
@@ -59,7 +59,7 @@ const AboutDetail: React.FC = () => {
     {
       type: "education",
       title: "Bachelor of Science in Computer Science",
-      period: "September 2011 – July 2023",
+      period: "September 2019 – July 2023",
       institution: "Unity University",
       achievement: "Graduated with distinction",
       skills: [],

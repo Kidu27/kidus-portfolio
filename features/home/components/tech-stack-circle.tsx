@@ -42,7 +42,7 @@ export default function TechCircle() {
     <div className="relative flex items-center justify-center min-h-screen bg-white">
       {/* Center profile image */}
       <div className="relative z-10 rounded-full overflow-hidden w-40 h-40 border-4 border-gray-300 shadow-lg">
-        <Image src="/me.jpg" alt="Bekalu" fill className="object-cover" />
+        <Image src="/me.jpg" alt="Kidus" fill className="object-cover" />
       </div>
 
       {/* Tech icon circle */}

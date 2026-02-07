@@ -24,7 +24,7 @@ const BlogSection = () => {
       readTime: "8 min read",
       image: "/code-reading.png",
       imageAlt: "Code reading article cover",
-      link: "https://www.linkedin.com/posts/bekalusisay_codingtips-softwaredevelopment-learnbyreading-activity-7325421739272773633-CATw",
+      link: "https://www.linkedin.com/posts/kidusyared_codingtips-softwaredevelopment-learnbyreading-activity-7325421739272773633-CATw",
     },
     {
       title:
@@ -33,7 +33,7 @@ const BlogSection = () => {
       readTime: "5 min read",
       image: "/one-habit.png",
       imageAlt: "Developer habits blog cover",
-      link: "https://www.linkedin.com/posts/bekalusisay_developerhabits-consistencyiskey-growthmindset-activity-7323995055873040384-aF0T",
+      link: "https://www.linkedin.com/posts/kidusyared_developerhabits-consistencyiskey-growthmindset-activity-7323995055873040384-aF0T",
     },
   ];
 
@@ -118,7 +118,7 @@ const BlogSection = () => {
         {/* See More */}
         <div className="flex justify-center mt-12">
           <Link
-            href="https://www.linkedin.com/in/bekalusisay/recent-activity/all/"
+            href="https://www.linkedin.com/in/kidusyared/recent-activity/all/"
             target="_blank"
             rel="noopener noreferrer"
           >
