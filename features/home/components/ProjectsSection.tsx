@@ -1,81 +1,86 @@
-// ProjectsSection.tsx
 "use client";
 
 import Image from "next/image";
-import { Button } from "rizzui/button";
-import { Text } from "rizzui/typography";
-import { MoreHorizontal } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
 
 export default function ProjectsSection() {
   return (
-    <section id="projects">
-      <Container className="py-12">
-        <div className="mb-10 text-center">
-          <div className="relative inline-block mb-4">
-            <h2 className="text-3xl font-bold text-gray-900 relative z-10">
-              Selected Projects
+    <section id="projects" className="relative py-24 md:py-32 overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_100%,rgba(99,102,241,0.06),transparent)]" />
+
+      <Container className="relative z-10">
+        {/* Header */}
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-16">
+          <div>
+            <span className="text-sm font-semibold text-primary uppercase tracking-widest">
+              Portfolio
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black text-foreground mt-2">
+              Selected <span className="gradient-text">Projects</span>
             </h2>
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-primary/20 rounded-full"></div>
           </div>
-          <Text className="text-gray-600 mt-1 max-w-2xl mx-auto">
-            A curated set of interfaces and experiments. Monochrome previews,
-            full case studies on request.
-          </Text>
+          <Link
+            href="/projects"
+            className="group flex items-center gap-2 text-sm font-semibold text-muted-foreground hover:text-primary transition-colors duration-200 flex-shrink-0"
+          >
+            View all projects
+            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+          </Link>
         </div>
 
-        <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.slice(0, 6).map((project, index) => (
-            <Link key={index} href={`/projects/${project.slug}`}>
-              <div className="rounded-2xl overflow-hidden bg-white border border-gray-200 shadow-sm hover:shadow-xl hover:border-primary/20 transition-all duration-300 hover:-translate-y-2 group cursor-pointer">
-                <div className="relative w-full h-40 sm:h-48 overflow-hidden bg-gray-200">
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {projects.slice(0, 6).map((project, i) => (
+            <Link key={i} href={`/projects/${project.slug}`}>
+              <div className="group relative rounded-2xl overflow-hidden bg-card border border-border/50 hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 cursor-pointer h-full flex flex-col">
+                {/* Image */}
+                <div className="relative w-full h-48 overflow-hidden bg-muted flex-shrink-0">
                   <Image
                     src={project.img}
                     alt={project.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="object-contain transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  {/* Arrow icon */}
+                  <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
+                    <ArrowUpRight className="w-4 h-4 text-primary" />
+                  </div>
                 </div>
 
-                <div className="p-4 sm:p-5 space-y-2">
-                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 leading-tight group-hover:text-primary transition-colors duration-300">
+                {/* Content */}
+                <div className="p-5 flex flex-col flex-1">
+                  <h3 className="text-base font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300 leading-tight">
                     {project.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-gray-600">
+                  <p className="text-xs text-muted-foreground mb-3">
                     {project.subtitle}
                   </p>
-                  <div className="flex flex-wrap gap-1 sm:gap-2 pt-2">
-                    {project.tags.map((tag, i) => (
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1 line-clamp-2">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 mt-auto">
+                    {project.tags.map((tag) => (
                       <span
-                        key={i}
-                        className="text-xs px-2 sm:px-3 py-1 rounded-full bg-gray-100 text-gray-700 border border-gray-200 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300"
+                        key={tag}
+                        className="text-xs px-2.5 py-1 rounded-full bg-muted border border-border/50 text-muted-foreground"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
                 </div>
+
+                {/* Bottom gradient line */}
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-secondary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               </div>
             </Link>
           ))}
-        </div>
-
-        <div className="flex justify-start mt-8">
-          <Link href="/projects">
-            <Button
-              variant="outline"
-              className="rounded-full border-gray-300 text-gray-700 hover:bg-primary hover:text-white hover:border-primary flex items-center gap-2 transition-all duration-300 hover:scale-105 hover:shadow-lg group"
-            >
-              <MoreHorizontal
-                size={18}
-                className="group-hover:rotate-90 transition-transform duration-300"
-              />
-              See more
-            </Button>
-          </Link>
         </div>
       </Container>
     </section>

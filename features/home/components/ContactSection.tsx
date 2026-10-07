@@ -1,9 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Text } from "rizzui/typography";
-import { Button } from "rizzui/button";
-import { Send, MapPin, Mail, Linkedin, Github } from "lucide-react";
+import { Send, MapPin, Mail, Linkedin, Github, ArrowUpRight } from "lucide-react";
 import Container from "@/components/ui/Container";
 import emailjs from "@emailjs/browser";
 import Link from "next/link";
@@ -11,35 +9,18 @@ import Link from "next/link";
 emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [isLoading, setIsLoading] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<
-    "idle" | "success" | "error"
-  >("idle");
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((p) => ({ ...p, [e.target.name]: e.target.value }));
   };
-
-  const now = new Date();
-  const date = now.toLocaleDateString();
-  const time = now.toLocaleTimeString();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    setSubmitStatus("idle");
-
+    setStatus("idle");
     try {
       const result = await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
@@ -49,239 +30,172 @@ const ContactSection = () => {
           from_email: formData.email,
           message: formData.message,
           to_email: "kidusyared455@gmail.com",
-          date: date,
-          time: time,
-        },
+          date: new Date().toLocaleDateString(),
+          time: new Date().toLocaleTimeString(),
+        }
       );
-
       if (result.status === 200) {
-        setSubmitStatus("success");
+        setStatus("success");
         setFormData({ name: "", email: "", message: "" });
-        setTimeout(() => setSubmitStatus("idle"), 5000);
+        setTimeout(() => setStatus("idle"), 5000);
       }
-    } catch (error) {
-      console.error("Error sending email:", error);
-      setSubmitStatus("error");
-      setTimeout(() => setSubmitStatus("idle"), 5000);
+    } catch {
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 5000);
     } finally {
       setIsLoading(false);
     }
   };
 
+  const socials = [
+    { icon: Mail, label: "Email", value: "kidusyared455@gmail.com", href: "mailto:kidusyared455@gmail.com" },
+    { icon: Linkedin, label: "LinkedIn", value: "kidus-yared-a36562355", href: "https://linkedin.com/in/kidus-yared-a36562355/" },
+    { icon: Github, label: "GitHub", value: "Kidu27", href: "https://github.com/Kidu27" },
+    { icon: MapPin, label: "Location", value: "Addis Ababa, Ethiopia · GMT+3", href: null },
+  ];
+
   return (
-    <section id="contact">
-      <Container className="py-12 md:py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-          {/* Contact Form Card */}
-          <div className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 shadow-sm border border-gray-200">
-            <div className="mb-4 sm:mb-6">
-              <div className="relative inline-block mb-2">
-                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 relative z-10">
-                  Contact
-                </h2>
-                <div className="absolute -bottom-1 left-0 w-12 h-1 bg-primary/20 rounded-full"></div>
-              </div>
-              <Text className="text-gray-600 text-sm sm:text-base">
-                Open to freelance, contract, and collaborations.
-              </Text>
-            </div>
+    <section id="contact" className="relative py-24 md:py-32 overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_0%_100%,rgba(6,182,212,0.06),transparent)]" />
 
-            {/* Status Messages */}
-            {submitStatus === "success" && (
-              <div className="mb-4 p-4 bg-green-50 border border-green-200 rounded-lg">
-                <Text className="text-green-800 text-sm">
-                  Thank you! Your message has been sent successfully. I'll get
-                  back to you soon.
-                </Text>
+      <Container className="relative z-10">
+        {/* Header */}
+        <div className="mb-16">
+          <span className="text-sm font-semibold text-primary uppercase tracking-widest">
+            Contact
+          </span>
+          <h2 className="text-4xl md:text-5xl font-black text-foreground mt-2">
+            Let's{" "}
+            <span className="gradient-text">Work Together</span>
+          </h2>
+          <p className="text-muted-foreground text-lg mt-4 max-w-xl">
+            Open to freelance, contract, and full-time opportunities. Let's build something great.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          {/* Form */}
+          <div className="p-6 md:p-8 rounded-2xl bg-card border border-border/50">
+            {status === "success" && (
+              <div className="mb-6 p-4 rounded-xl bg-green-400/10 border border-green-400/20 text-green-400 text-sm">
+                Message sent! I'll get back to you soon.
+              </div>
+            )}
+            {status === "error" && (
+              <div className="mb-6 p-4 rounded-xl bg-red-400/10 border border-red-400/20 text-red-400 text-sm">
+                Something went wrong. Please email me directly at kidusyared455@gmail.com
               </div>
             )}
 
-            {submitStatus === "error" && (
-              <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
-                <Text className="text-red-800 text-sm">
-                  Sorry, there was an error sending your message. Please try
-                  again or email me directly at kidusyared455@gmail.com
-                </Text>
-              </div>
-            )}
-
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-              {/* Name Input */}
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
+                <label className="block text-sm font-medium text-muted-foreground mb-2">
                   Your name
                 </label>
                 <input
                   type="text"
-                  id="name"
                   name="name"
                   value={formData.name}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200"
-                  placeholder="Your name"
+                  onChange={handleChange}
                   required
                   disabled={isLoading}
+                  placeholder="John Doe"
+                  className="w-full px-4 py-3 rounded-xl bg-muted border border-border/50 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all duration-200 disabled:opacity-50"
                 />
               </div>
-
-              {/* Email Input */}
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
+                <label className="block text-sm font-medium text-muted-foreground mb-2">
                   Email address
                 </label>
                 <input
                   type="email"
-                  id="email"
                   name="email"
                   value={formData.email}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200"
-                  placeholder="Email address"
+                  onChange={handleChange}
                   required
                   disabled={isLoading}
+                  placeholder="john@example.com"
+                  className="w-full px-4 py-3 rounded-xl bg-muted border border-border/50 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all duration-200 disabled:opacity-50"
                 />
               </div>
-
-              {/* Message Input */}
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  Tell me about your project...
+                <label className="block text-sm font-medium text-muted-foreground mb-2">
+                  Message
                 </label>
                 <textarea
-                  id="message"
                   name="message"
                   value={formData.message}
-                  onChange={handleInputChange}
-                  rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200 resize-none"
-                  placeholder="Tell me about your project..."
+                  onChange={handleChange}
                   required
                   disabled={isLoading}
+                  rows={5}
+                  placeholder="Tell me about your project..."
+                  className="w-full px-4 py-3 rounded-xl bg-muted border border-border/50 text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-all duration-200 resize-none disabled:opacity-50"
                 />
               </div>
-
-              {/* Submit Button */}
-              <Button
+              <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-gradient-to-r from-primary to-primary/80 text-primary-foreground hover:from-primary/90 hover:to-primary/70 transition-all duration-300 flex items-center justify-center gap-2 py-3 shadow-lg hover:shadow-xl hover:scale-105 group disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="w-full py-3.5 rounded-xl font-semibold text-white bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all duration-200 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2"
               >
                 {isLoading ? (
                   <>
-                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                     Sending...
                   </>
                 ) : (
                   <>
-                    <Send className="w-4 h-4 transition-transform duration-300" />
-                    Send message
+                    <Send className="w-4 h-4" />
+                    Send Message
                   </>
                 )}
-              </Button>
+              </button>
             </form>
           </div>
 
-          {/* Info Card */}
-          <div className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 shadow-sm border border-gray-200">
-            <div className="mb-4 sm:mb-6">
-              <div className="relative inline-block mb-2">
-                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 relative z-10">
-                  Info
-                </h2>
-                <div className="absolute -bottom-1 left-0 w-8 h-1 bg-primary/20 rounded-full"></div>
+          {/* Info */}
+          <div className="flex flex-col gap-4">
+            {socials.map(({ icon: Icon, label, value, href }) => (
+              <div key={label}>
+                {href ? (
+                  <Link
+                    href={href}
+                    target={href.startsWith("http") ? "_blank" : undefined}
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-4 p-5 rounded-2xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-300 hover:-translate-y-0.5"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold mb-0.5">{label}</p>
+                      <p className="text-foreground font-medium text-sm truncate">{value}</p>
+                    </div>
+                    <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors duration-200 flex-shrink-0" />
+                  </Link>
+                ) : (
+                  <div className="flex items-center gap-4 p-5 rounded-2xl bg-card border border-border/50">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold mb-0.5">{label}</p>
+                      <p className="text-foreground font-medium text-sm">{value}</p>
+                    </div>
+                  </div>
+                )}
               </div>
-            </div>
+            ))}
 
-            {/* Contact Details */}
-            <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
-              {/* Location */}
-              <div className="flex items-center gap-3 sm:gap-4">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600" />
-                </div>
-                <div className="min-w-0">
-                  <Text className="font-medium text-gray-900 text-sm sm:text-base">
-                    Location
-                  </Text>
-                  <Text className="text-gray-600 text-xs sm:text-sm">
-                    Remote · GMT+3
-                  </Text>
-                </div>
+            {/* Availability card */}
+            <div className="p-5 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/20 mt-2">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse" />
+                <span className="text-sm font-bold text-foreground">Available for work</span>
               </div>
-
-              <div className="flex flex-col gap-4">
-                {/* Email */}
-                <Link
-                  href="mailto:kidusyared455@gmail.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 sm:gap-4"
-                >
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600" />
-                  </div>
-                  <div className="min-w-0">
-                    <Text className="font-medium text-gray-900 text-sm sm:text-base">
-                      Email
-                    </Text>
-                    <Text className="text-gray-600 text-xs sm:text-sm">
-                      kidusyared455@gmail.com
-                    </Text>
-                  </div>
-                </Link>
-
-                {/* LinkedIn */}
-                <Link
-                  href="https://linkedin.com/in/kidus-yared-a36562355/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 sm:gap-4"
-                >
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600" />
-                  </div>
-                  <div className="min-w-0">
-                    <Text className="font-medium text-gray-900 text-sm sm:text-base">
-                      LinkedIn
-                    </Text>
-                    <Text className="text-gray-600 text-xs sm:text-sm">
-                      linkedin.com/in/kidus-yared-a36562355/
-                    </Text>
-                  </div>
-                </Link>
-
-                {/* GitHub */}
-                <Link
-                  href="https://github.com/Kidu27"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 sm:gap-4"
-                >
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Github className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600" />
-                  </div>
-                </Link>
-              </div>
-            </div>
-            <div className="w-full h-[450px] rounded-xl overflow-hidden">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.4737482122146!2d38.79753734032941!3d9.020474466117989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b855cd643a691%3A0x5ce3922436b4f99a!2sMegenagna!5e0!3m2!1sen!2set!4v1761471406293!5m2!1sen!2set"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
+              <p className="text-sm text-muted-foreground">
+                Currently open to freelance, contract, and full-time remote opportunities.
+              </p>
             </div>
           </div>
         </div>

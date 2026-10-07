@@ -54,9 +54,18 @@ const outfit = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Kidus Yared – Mobile App Developer & Tech Enthusiast",
+  title: "Kidus Yared – Mobile Software Engineer | React Native & FinTech",
   description:
-    "Mobile App Developer specializing in React Native . Passionate about building scalable web apps and  creating seamless user experiences.",
+    "Mobile Software Engineer with 3+ years building enterprise-grade React Native apps and full-stack systems for FinTech. Shipped products for CBE and Dashen Bank.",
+  keywords: ["React Native", "Mobile Developer", "FinTech", "Full-Stack", "Ethiopia"],
+  authors: [{ name: "Kidus Yared" }],
+  openGraph: {
+    title: "Kidus Yared – Mobile Software Engineer",
+    description: "Building enterprise-grade mobile apps and full-stack systems for FinTech.",
+    url: "https://kidus-dev.vercel.app",
+    siteName: "Kidus Yared Portfolio",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

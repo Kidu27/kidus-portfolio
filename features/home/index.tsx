@@ -1,6 +1,6 @@
 import About from "./components/About";
-import BlogSection from "./components/BlogSection";
 import ContactSection from "./components/ContactSection";
+import Experience from "./components/Experience";
 import Footer from "./components/Footer";
 import Header from "./components/header";
 import Hero from "./components/hero";
@@ -9,12 +9,12 @@ import TestimonialCarousel from "./components/TestimonialCarousel";
 
 const Home = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-[#0a0a0f]">
       <Header />
       <Hero />
       <About />
+      <Experience />
       <ProjectsSection />
-      {/* <BlogSection /> */}
       <TestimonialCarousel />
       <ContactSection />
       <Footer />
