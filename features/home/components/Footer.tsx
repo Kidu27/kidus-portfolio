@@ -6,8 +6,8 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-border/50 bg-[#0a0a0f]">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_100%,rgba(99,102,241,0.05),transparent)]" />
+    <footer className="relative border-t border-border/50 bg-[#0f0e0d]">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_100%,rgba(232,197,71,0.03),transparent)]" />
 
       <Container className="relative py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
@@ -53,7 +53,7 @@ const Footer = () => {
                 href={href}
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg border border-border/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 hover:bg-primary/10 transition-all duration-200"
+                className="w-9 h-9 rounded-lg border border-border/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 hover:bg-primary/8 transition-all duration-200"
               >
                 <Icon className="w-4 h-4" />
               </Link>

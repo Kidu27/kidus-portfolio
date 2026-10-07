@@ -84,7 +84,7 @@ export default function TestimonialCarousel() {
                 "{testimonials[current].content}"
               </p>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
                   {testimonials[current].name[0]}
                 </div>
                 <div>
@@ -99,7 +99,7 @@ export default function TestimonialCarousel() {
             </div>
 
             {/* Bottom gradient */}
-            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-secondary" />
+            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-accent" />
           </div>
 
           {/* Controls */}

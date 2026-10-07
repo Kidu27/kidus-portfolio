@@ -65,6 +65,20 @@ export const metadata: Metadata = {
     url: "https://dev-kidus.vercel.app",
     siteName: "Kidus Yared Portfolio",
     type: "website",
+    images: [
+      {
+        url: "https://dev-kidus.vercel.app/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Kidus Yared – Mobile Software Engineer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kidus Yared – Mobile Software Engineer",
+    description: "Building enterprise-grade mobile apps and full-stack systems for FinTech.",
+    images: ["https://dev-kidus.vercel.app/opengraph-image"],
   },
 };
 

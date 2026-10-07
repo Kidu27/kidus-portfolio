@@ -7,52 +7,49 @@ const skillGroups = [
   {
     icon: Smartphone,
     label: "Mobile",
-    color: "text-primary",
-    bg: "bg-primary/10 border-primary/20",
     skills: ["React Native", "Flutter", "TypeScript", "Redux"],
   },
   {
     icon: Code2,
     label: "Frontend",
-    color: "text-secondary",
-    bg: "bg-secondary/10 border-secondary/20",
     skills: ["React.js", "Next.js", "Tailwind CSS", "JavaScript"],
   },
   {
     icon: Database,
     label: "Backend & DB",
-    color: "text-accent",
-    bg: "bg-accent/10 border-accent/20",
-    skills: ["Node.js", "Express", "PostgreSQL", "MongoDB", "Firebase"],
+    skills: [
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "MongoDB",
+      "Firebase",
+      "Prisma",
+    ],
   },
   {
     icon: Shield,
     label: "Tools & DevOps",
-    color: "text-green-400",
-    bg: "bg-green-400/10 border-green-400/20",
-    skills: ["Git", "Docker", "CI/CD", "Prisma", "Xcode"],
+    skills: ["Git", "Docker", "CI/CD", "Jest", "Postman"],
   },
 ];
 
 export default function About() {
   return (
     <section id="about" className="relative py-24 md:py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_0%_50%,rgba(99,102,241,0.06),transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_0%_50%,rgba(232,197,71,0.04),transparent)]" />
 
       <Container className="relative z-10">
-        {/* Section header */}
         <div className="mb-16">
           <span className="text-sm font-semibold text-primary uppercase tracking-widest">
             About Me
           </span>
           <h2 className="text-4xl md:text-5xl font-black text-foreground mt-2">
-            Crafting Digital{" "}
-            <span className="gradient-text">Experiences</span>
+            Crafting Digital <span className="gradient-text">Experiences</span>
           </h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          {/* Left — Bio */}
+          {/* Bio */}
           <div className="space-y-6">
             <p className="text-muted-foreground text-lg leading-relaxed">
               I'm a{" "}
@@ -68,8 +65,10 @@ export default function About() {
               <span className="text-primary font-semibold">
                 EagleLion System Technology
               </span>
-              , I'm spearheading mobile engineering for the{" "}
-              <span className="text-foreground font-semibold">CBE SuperApp</span>{" "}
+              , spearheading mobile engineering for the{" "}
+              <span className="text-foreground font-semibold">
+                CBE SuperApp
+              </span>{" "}
               — an enterprise-scale application for Ethiopia's largest bank,
               handling high-volume transaction processing for millions of users.
             </p>
@@ -79,9 +78,7 @@ export default function About() {
                 FinTech architecture
               </span>
               , payment gateway integration, secure data flows, and
-              performance-optimized mobile experiences. I'm passionate about
-              shipping reliable, scalable products that drive massive user
-              engagement.
+              performance-optimized mobile experiences.
             </p>
 
             {/* Certifications */}
@@ -96,23 +93,25 @@ export default function About() {
                 ].map((cert) => (
                   <div key={cert} className="flex items-center gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">{cert}</span>
+                    <span className="text-sm text-muted-foreground">
+                      {cert}
+                    </span>
                   </div>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* Right — Skills */}
+          {/* Skills */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {skillGroups.map(({ icon: Icon, label, color, bg, skills }) => (
+            {skillGroups.map(({ icon: Icon, label, skills }) => (
               <div
                 key={label}
-                className="p-5 rounded-2xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 group"
+                className="p-5 rounded-2xl bg-card border border-border/50 hover:border-primary/25 transition-all duration-300 hover:-translate-y-1 group"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className={`p-2 rounded-lg ${bg} border`}>
-                    <Icon className={`w-4 h-4 ${color}`} />
+                  <div className="p-2 rounded-lg bg-primary/10 border border-primary/20">
+                    <Icon className="w-4 h-4 text-primary" />
                   </div>
                   <span className="text-sm font-bold text-foreground uppercase tracking-wider">
                     {label}

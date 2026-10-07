@@ -3,10 +3,7 @@
 import React, { useState } from "react";
 import { Send, MapPin, Mail, Linkedin, Github, ArrowUpRight } from "lucide-react";
 import Container from "@/components/ui/Container";
-import emailjs from "@emailjs/browser";
 import Link from "next/link";
-
-emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -22,21 +19,17 @@ const ContactSection = () => {
     setIsLoading(true);
     setStatus("idle");
     try {
-      const result = await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-          to_email: "kidusyared455@gmail.com",
-          date: new Date().toLocaleDateString(),
-          time: new Date().toLocaleTimeString(),
-        }
-      );
-      if (result.status === 200) {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
         setStatus("success");
         setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("error");
         setTimeout(() => setStatus("idle"), 5000);
       }
     } catch {
@@ -77,7 +70,7 @@ const ContactSection = () => {
           {/* Form */}
           <div className="p-6 md:p-8 rounded-2xl bg-card border border-border/50">
             {status === "success" && (
-              <div className="mb-6 p-4 rounded-xl bg-green-400/10 border border-green-400/20 text-green-400 text-sm">
+              <div className="mb-6 p-4 rounded-xl bg-primary/10 border border-primary/20 text-primary text-sm">
                 Message sent! I'll get back to you soon.
               </div>
             )}
@@ -136,7 +129,7 @@ const ContactSection = () => {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full py-3.5 rounded-xl font-semibold text-white bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all duration-200 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2"
+                className="w-full py-3.5 rounded-xl font-semibold text-white bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-all duration-200 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2"
               >
                 {isLoading ? (
                   <>
@@ -190,7 +183,7 @@ const ContactSection = () => {
             {/* Availability card */}
             <div className="p-5 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/20 mt-2">
               <div className="flex items-center gap-2 mb-2">
-                <div className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse" />
+                <div className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse" />
                 <span className="text-sm font-bold text-foreground">Available for work</span>
               </div>
               <p className="text-sm text-muted-foreground">

@@ -9,7 +9,7 @@ import TestimonialCarousel from "./components/TestimonialCarousel";
 
 const Home = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-[#0a0a0f]">
+    <div className="flex flex-col min-h-screen bg-[#0f0e0d]">
       <Header />
       <Hero />
       <About />
