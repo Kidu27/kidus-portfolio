@@ -134,7 +134,7 @@ export default function Experience() {
                       </p>
                       <div className="relative w-full rounded-xl overflow-hidden border border-border/50">
                         <Image
-                          src="/projects/gitlab-activity.png"
+                          src="https://raw.githubusercontent.com/Kidu27/kidus-portfolio/master/public/projects/gitlab-activity.png"
                           alt="GitLab contribution graph on CBE SuperApp"
                           width={1200}
                           height={400}
