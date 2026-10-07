@@ -1,5 +1,6 @@
 import Container from "@/components/ui/Container";
 import { Briefcase, Calendar, MapPin } from "lucide-react";
+import Image from "next/image";
 
 const experiences = [
   {
@@ -37,7 +38,10 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative py-24 md:py-32 overflow-hidden">
+    <section
+      id="experience"
+      className="relative py-24 md:py-32 overflow-hidden"
+    >
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_100%_50%,rgba(168,85,247,0.06),transparent)]" />
 
       <Container className="relative z-10">
@@ -47,8 +51,7 @@ export default function Experience() {
             Work History
           </span>
           <h2 className="text-4xl md:text-5xl font-black text-foreground mt-2">
-            Professional{" "}
-            <span className="gradient-text">Experience</span>
+            Professional <span className="gradient-text">Experience</span>
           </h2>
         </div>
 
@@ -101,7 +104,10 @@ export default function Experience() {
                   {/* Highlights */}
                   <ul className="space-y-2 mb-5">
                     {exp.highlights.map((h, j) => (
-                      <li key={j} className="flex items-start gap-2.5 text-muted-foreground text-sm leading-relaxed">
+                      <li
+                        key={j}
+                        className="flex items-start gap-2.5 text-muted-foreground text-sm leading-relaxed"
+                      >
                         <div className="w-1.5 h-1.5 rounded-full bg-primary/60 flex-shrink-0 mt-1.5" />
                         {h}
                       </li>
@@ -119,6 +125,28 @@ export default function Experience() {
                       </span>
                     ))}
                   </div>
+
+                  {/* GitLab contributions — only for current job */}
+                  {exp.current && (
+                    <div className="mt-6 pt-6 border-t border-border/50">
+                      <p className="text-xs text-muted-foreground uppercase tracking-widest font-semibold mb-3">
+                        GitLab Contribution Activity · CBE SuperApp
+                      </p>
+                      <div className="relative w-full rounded-xl overflow-hidden border border-border/50">
+                        <Image
+                          src="/projects/gitlab-activity.png"
+                          alt="GitLab contribution graph on CBE SuperApp"
+                          width={1200}
+                          height={400}
+                          className="w-full object-cover"
+                        />
+                      </div>
+                      <p className="text-xs text-muted-foreground font-semibold mt-2">
+                        * Source code is private (NDA). Screenshot shows real
+                        contribution activity on the CBE SuperApp repository.
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}

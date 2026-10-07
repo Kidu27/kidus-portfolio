@@ -113,7 +113,7 @@ const Hero = () => {
               </button>
             </Link>
             <a
-              href="https://kidus-dev.vercel.app/"
+              href="https://dev-kidus.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
             >

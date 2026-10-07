@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Kidus Yared – Mobile Software Engineer",
     description: "Building enterprise-grade mobile apps and full-stack systems for FinTech.",
-    url: "https://kidus-dev.vercel.app",
+    url: "https://dev-kidus.vercel.app",
     siteName: "Kidus Yared Portfolio",
     type: "website",
   },
